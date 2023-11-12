@@ -31,6 +31,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moveX = Input.GetAxis("Horizontal") * speed;
+
+		// we update the sprite flipX property to flip the sprite
+		// if the player is moving to the left
+		if (moveX < 0)
+		{
+			GetComponent<SpriteRenderer>().flipX = true;
+		}
+		else if (moveX > 0)
+		{
+			GetComponent<SpriteRenderer>().flipX = false;
+		}
     }
 
     private void FixedUpdate()
