@@ -20,10 +20,13 @@ public class PlatformController : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.CompareTag("Player"))
-		{
-			Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-			rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-		}
-	}
+        if (collision.relativeVelocity.y <= 0)
+        {
+		    if (collision.gameObject.CompareTag("Player"))
+		    {
+			    Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+			    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+		    }
+        }
+    }
 }
