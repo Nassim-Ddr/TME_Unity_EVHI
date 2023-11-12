@@ -9,7 +9,9 @@ public class GameOver : MonoBehaviour
 	public GameObject gameOverUI;
 	public Text ScoreUI;
 	public Scene scene;
+	public GameScoreManager ScoreManager;
 	bool gameOver;
+
 
 	// Start is called before the first frame update
 	void Start()
@@ -32,7 +34,7 @@ public class GameOver : MonoBehaviour
 	void OnGameOver()
 	{
 		gameOverUI.SetActive(true);
-		ScoreUI.text = Mathf.RoundToInt(Time.timeSinceLevelLoad).ToString();
+		ScoreUI.text = ScoreManager.score.ToString("0");
 		gameOver = true;
 	}
 }
