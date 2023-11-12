@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
 
 	float screenHalfWidthInWorldUnits;
+	Vector3 screenPosition;
 	Vector2 screenHalfSizeInWorldUnits;
 
 	public event System.Action OnPlayerDeath;
@@ -46,8 +47,10 @@ public class PlayerController : MonoBehaviour
 			transform.position = new Vector2(-screenHalfWidthInWorldUnits, transform.position.y);
 		}
 
-		// if the player goes out of bounds, kill the player
-		if (transform.position.y < -screenHalfSizeInWorldUnits.y)
+		// calculate the screen position of the player
+		screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+		// if the player drop down the screen then it dies
+		if (screenPosition.y < 0)
 		{
 			PlayerDie();
 		}
