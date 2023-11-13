@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformMobile
       objectReference: {fileID: 0}
+    - target: {fileID: 7762871665933152516, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
 --- !u!1 &3137865382646868404 stripped

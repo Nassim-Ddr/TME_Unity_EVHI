@@ -74,6 +74,12 @@ public class PlayerController : MonoBehaviour
 		{
 			PlayerDie();
 		}
+
+		if (triggerCollider.tag == "Platform")
+		{
+			// play the jump sound
+			Debug.Log("Jump");
+		}
 	}
 
 	void PlayerDie(){
