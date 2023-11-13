@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public GameSettings gameSettings;
+	[HideInInspector]
     public Rigidbody2D rb;
 
 	float screenHalfWidthInWorldUnits;
@@ -70,12 +71,14 @@ public class PlayerController : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D triggerCollider)
 	{
-		if (triggerCollider.tag == "Enemies")
+		//Debug.Log(triggerCollider);
+		if (triggerCollider.gameObject.tag == "Enemies")
 		{
+			//Debug.Log("Enemy");
 			PlayerDie();
 		}
 
-		if (triggerCollider.tag == "Platform")
+		if (triggerCollider.gameObject.tag == "Platform")
 		{
 			// play the jump sound
 			Debug.Log("Jump");
