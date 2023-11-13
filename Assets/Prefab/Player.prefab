@@ -96,6 +96,7 @@ MonoBehaviour:
   speed: 10
   gameSettings: {fileID: 11400000, guid: 4e675accdb991074d8e5d4ae309e07af, type: 2}
   rb: {fileID: 0}
+  bulletPrefab: {fileID: 6686669768185519333, guid: 8281388680f9182428163e8813e81478, type: 3}
 --- !u!212 &5264079579932356612
 SpriteRenderer:
   m_ObjectHideFlags: 0

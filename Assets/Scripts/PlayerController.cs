@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
     public GameSettings gameSettings;
 	[HideInInspector]
     public Rigidbody2D rb;
+	public GameObject bulletPrefab;
+	public float reloadTime = 0.5f;
+	float nextShotTime = 0f;
 
 	float screenHalfWidthInWorldUnits;
 	Vector3 screenPosition;
 	Vector2 screenHalfSizeInWorldUnits;
+	
 
 	public event System.Action OnPlayerDeath;
 
@@ -43,12 +47,23 @@ public class PlayerController : MonoBehaviour
 		{
 			GetComponent<SpriteRenderer>().flipX = false;
 		}
-    }
+
+		// we shoot a bullet in the direction of the mouse
+		if (Input.GetMouseButtonDown(0))
+		{
+			if (Time.time > nextShotTime)
+			{
+				nextShotTime = Time.time + reloadTime;
+				Shoot();
+			}
+		}
+	}
 
     private void FixedUpdate()
 	{
 		rb.velocity = new Vector2(moveX, rb.velocity.y);
 
+		// if the player is out of the screen bounds then we teleport it to the other side
 		if (transform.position.x < -screenHalfWidthInWorldUnits)
 		{
 			transform.position = new Vector2(screenHalfWidthInWorldUnits, transform.position.y);
@@ -66,8 +81,19 @@ public class PlayerController : MonoBehaviour
 		{
 			PlayerDie();
 		}
-
 	}
+
+	void Shoot(){
+		Vector3 mousePosition = Input.mousePosition;
+		mousePosition.z = 10;
+		Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+		Vector2 direction = (mouseWorldPosition - transform.position).normalized;
+		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+		// we set the bullet orientation according to the direction
+		bullet.transform.LookAt(transform.position + Vector3.forward, direction);
+		bullet.GetComponent<Rigidbody2D>().velocity = direction * 10f;
+	}
+
 
 	void OnTriggerEnter2D(Collider2D triggerCollider)
 	{
