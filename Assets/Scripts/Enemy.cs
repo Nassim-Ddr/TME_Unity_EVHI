@@ -7,13 +7,15 @@ public class Enemy : MonoBehaviour
 {
     public float health = 1;
     public bool isMoving = false;
+    public int scoreValue = 100;
     float speed = 1.5f;
     float timeToMove = 3f;
     float t = 0f;
+    GameScoreManager ScoreManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ScoreManager = FindObjectOfType<GameScoreManager>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
 		{
+            ScoreManager.AddBonus(scoreValue);
 			Destroy(gameObject);
 		}
 

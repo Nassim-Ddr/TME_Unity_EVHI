@@ -124,3 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   isMoving: 0
+  scoreValue: 300
