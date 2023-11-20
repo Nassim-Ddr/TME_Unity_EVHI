@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
@@ -11,11 +12,13 @@ public class Enemy : MonoBehaviour
     float speed = 1.5f;
     float timeToMove = 3f;
     float t = 0f;
+    Color baseColor;
     GameScoreManager ScoreManager;
     // Start is called before the first frame update
     void Start()
     {
         ScoreManager = FindObjectOfType<GameScoreManager>();
+        baseColor = GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -38,9 +41,20 @@ public class Enemy : MonoBehaviour
 		if (collision.gameObject.tag == "Bullet")
 		{
 			Destroy(collision.gameObject);
+			// change the color of the enemy for a short time
+            // learp back to the base color
+            
+            StartCoroutine(ChangeColor());
 			health--;
             
 		}
+	}
+
+    IEnumerator ChangeColor()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<SpriteRenderer>().color = baseColor;
 	}
 
     void MoveRightToleft()
