@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
 		{
             ScoreManager.AddBonus(scoreValue);
+            ScoreManager.updateScore();
 			Destroy(gameObject);
 		}
 
