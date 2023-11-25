@@ -5,22 +5,28 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    public GameSettings gameSettings;
-	[HideInInspector]
-    public Rigidbody2D rb;
-	public GameObject bulletPrefab;
 	public float reloadTime = 0.5f;
+	public float jumpForce = 5f;
 	float nextShotTime = 0f;
+
+	public float ressortBonusForce = 3;
+	public float rocketSpeed = 5;
+
+	public GameSettings gameSettings;
+	public GameObject bulletPrefab;
+
+	public event System.Action OnPlayerDeath;
+
+	[HideInInspector] public string powerUp;
 
 	float screenHalfWidthInWorldUnits;
 	Vector3 screenPosition;
 	Vector2 screenHalfSizeInWorldUnits;
-	
 
-	public event System.Action OnPlayerDeath;
-
+	private Rigidbody2D rb;
 	private float moveX;
-    // Start is called before the first frame update
+	private bool canJump = true;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,7 +38,7 @@ public class PlayerController : MonoBehaviour
 		screenHalfSizeInWorldUnits = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
 	}
 
-    // Update is called once per frame
+
     void Update()
     {
         moveX = Input.GetAxis("Horizontal") * speed;
@@ -61,6 +67,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
 	{
+		if (powerUp == "rocket")
+		{
+			rb.velocity = new Vector2(moveX, rocketSpeed);
+			return;
+		}
+
 		rb.velocity = new Vector2(moveX, rb.velocity.y);
 
 		// if the player is out of the screen bounds then we teleport it to the other side
@@ -84,6 +96,7 @@ public class PlayerController : MonoBehaviour
 	}
 
 	void Shoot(){
+		
 		Vector3 mousePosition = Input.mousePosition;
 		mousePosition.z = 10;
 		Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -118,4 +131,19 @@ public class PlayerController : MonoBehaviour
 		}
 		Destroy(gameObject);
 	}
+
+	public void Jump()
+    {
+		if (canJump)
+        {
+			Vector2 upVelocity = new Vector2(rb.velocity.x, jumpForce);
+			if (powerUp == "springshoes")
+			{
+				upVelocity += new Vector2(0, ressortBonusForce);
+			}
+			rb.velocity = upVelocity;
+		}
+		
+	}
+
 }

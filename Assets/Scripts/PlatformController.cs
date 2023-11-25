@@ -24,8 +24,8 @@ public class PlatformController : MonoBehaviour
         {
 		    if (collision.gameObject.CompareTag("Player"))
 		    {
-			    Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-			    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+			    PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
+                pc.Jump();
 		    }
         }
     }
