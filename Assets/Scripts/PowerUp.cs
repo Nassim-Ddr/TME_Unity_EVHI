@@ -14,19 +14,22 @@ public class PowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         if (collision.gameObject.CompareTag("Player"))
         {
             playerController = collision.gameObject.GetComponent<PlayerController>();
 
-            transform.SetParent(collision.gameObject.transform);
-            transform.localPosition = powerup_relative_position;
+            if (playerController.powerUp == "")
+            {
+                transform.SetParent(collision.gameObject.transform);
+                transform.localPosition = powerup_relative_position;
 
-            playerController.powerUp = powerup_name;
+                playerController.activatePowerup(powerup_name);
 
+                transform.GetComponent<Collider2D>().enabled = false;
 
-            transform.GetComponent<Collider2D>().enabled = false;
-
-            StartCoroutine(WaitDuration());
+                StartCoroutine(WaitDuration());
+            }
         }
     }
     IEnumerator WaitDuration()
@@ -39,7 +42,10 @@ public class PowerUp : MonoBehaviour
     void cleanPowerUp()
     {
         //Maybe add animation here 
-        playerController.powerUp = "";
+        playerController.clearPowerup();
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
         transform.parent = null;
+        gameObject.AddComponent<Rigidbody2D>();
+        Destroy(this, 2);
     }
 }

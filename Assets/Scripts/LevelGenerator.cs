@@ -5,10 +5,9 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
 
-    public GameObject platformPrefab;
-
-    public float probaPlatformMobile = 0.2f;
-    public GameObject platformMobilePrefab; 
+	// Type de plateforme
+	public List<GameObject> platformTypes;
+	public List<float> platformProbabilities;
     
     public float PlatformMinDistanceY = .5f;
     public float PlateformMaxDistanceY = 1.5f;
@@ -26,7 +25,11 @@ public class LevelGenerator : MonoBehaviour
 	public int number_decoration = 100;
 	public float DecorationMinDistanceY = 5f;
 	public float DecorationMaxDistanceY = 15f;
-    
+
+	// POwerups 
+	public List<GameObject> powerUpPrefabs;
+	public List<float> powerUpProbabilities;
+
 	void Start()
     {
 		GenerateAllPlatform();
@@ -44,9 +47,32 @@ public class LevelGenerator : MonoBehaviour
 			spawnPosition.y += Random.Range(PlatformMinDistanceY, PlateformMaxDistanceY);
 			spawnPosition.x = Random.Range(-PlatformMaxDistanceX, PlatformMaxDistanceX);
 
-			float proba = Random.Range(0.0f, 1.0f);
-			if (proba <= probaPlatformMobile) Instantiate(platformMobilePrefab, spawnPosition, Quaternion.identity);
-			else Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+			float platformProba = Random.Range(0.0f, 1.0f);
+			int platformIndex = -1;
+			while (platformProba > 0)
+			{
+				platformIndex++;
+				platformProba -= platformProbabilities[platformIndex];
+			}
+
+			GameObject platform = Instantiate(platformTypes[platformIndex], spawnPosition, Quaternion.identity);
+
+			//Powerup generation
+			float powerUpProba = Random.Range(0.0f, 1.0f);
+			int powerUpIndex = -1;
+			while (powerUpProba > 0 & powerUpIndex < powerUpProbabilities.Count -1)
+			{
+				powerUpIndex++;
+				powerUpProba -= powerUpProbabilities[powerUpIndex];
+			}
+			if (powerUpProba < 0)
+			{
+				GameObject powerup = Instantiate(powerUpPrefabs[powerUpIndex], new Vector3(0, 0.2f, 0), Quaternion.identity);
+				powerup.transform.parent = platform.transform;
+				powerup.transform.localPosition = Vector3.zero;
+			}
+
+
 		}
 	}
 

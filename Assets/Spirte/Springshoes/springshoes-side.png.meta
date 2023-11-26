@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: b9f110abadd7e694ebfe8a40d819f4fb
+guid: b50634965d4636d4b882a31f8eda4486
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7938012779169840223
-    second: game-tiles-space_0
+      213: 6968671097570784612
+    second: springshoes-side_0
+  - first:
+      213: 4976909442071127078
+    second: springshoes-side_1
+  - first:
+      213: -8988920846060769002
+    second: springshoes-side_2
+  - first:
+      213: 2989404727049184772
+    second: springshoes-side_3
+  - first:
+      213: -4599206103621950144
+    second: springshoes-side_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,7 +62,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 495, z: 690, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -91,7 +103,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -106,22 +118,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: game-tiles-space_0
+      name: springshoes-side_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 750
-        height: 512
+        y: 48
+        width: 30
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a3021b4f6386d190800000000000000
-      internalID: -7938012779169840223
+      spriteID: 465fc3f0171b5b060800000000000000
+      internalID: 6968671097570784612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: springshoes-side_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 48
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624efedc4c8811540800000000000000
+      internalID: 4976909442071127078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: springshoes-side_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611b178ad10f04380800000000000000
+      internalID: -8988920846060769002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: springshoes-side_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 24
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406e3adb2cf7c7920800000000000000
+      internalID: 2989404727049184772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: springshoes-side_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0452ec89a665c20c0800000000000000
+      internalID: -4599206103621950144
       vertices: []
       indices: 
       edges: []

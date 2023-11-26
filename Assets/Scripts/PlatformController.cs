@@ -6,17 +6,7 @@ public class PlatformController : MonoBehaviour
 {
     public GameSettings gameSettings;
     public float jumpForce;
-    // Start is called before the first frame update
-    void Start()
-    {
-        jumpForce = gameSettings.jumpForce;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{

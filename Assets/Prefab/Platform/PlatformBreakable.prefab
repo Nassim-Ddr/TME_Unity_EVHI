@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7706270296139939067
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6854266382009619269, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cfa5037933e06f3439bb8e974757f253, type: 2}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3679395
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13395333
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605073665455682132, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762871665933152516, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+      propertyPath: m_Name
+      value: PlatformBreakable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+--- !u!1 &92726933769637375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7762871665933152516, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+  m_PrefabInstance: {fileID: 7706270296139939067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6433873108379170198
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92726933769637375}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1485127fee0dfa44f968becc63269083, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8721576850457059153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92726933769637375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fbf9d2fc4b3bc4a95b88e822d59da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformBreakLevels:
+  - {fileID: 21300000, guid: af004719dccaacd42bec59aae5e029a3, type: 2}
+  - {fileID: 21300000, guid: 1e3f8be973a1af14e84f05581247b9ea, type: 2}
+  - {fileID: 21300000, guid: cfa5037933e06f3439bb8e974757f253, type: 2}
+  - {fileID: 21300000, guid: 748e245e2155ea54eab3b01b3db2f2a9, type: 2}
+  - {fileID: 21300000, guid: 1a8feb845a819844f8c0347aa265f18a, type: 2}

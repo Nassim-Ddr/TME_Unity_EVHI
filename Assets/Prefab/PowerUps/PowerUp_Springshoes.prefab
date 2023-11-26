@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2373685676654386960}
   - component: {fileID: 2373685676654386963}
   - component: {fileID: 2373685676654386966}
+  - component: {fileID: 613404585348737832}
   - component: {fileID: 2373685676654386961}
   m_Layer: 0
   m_Name: PowerUp_Springshoes
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2373685676654386962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.03, y: 0.094, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -3876830128161194958, guid: 11e56bdf8d9bfa34c8bdca9397938f1d, type: 3}
+  m_Sprite: {fileID: 4976909442071127078, guid: b50634965d4636d4b882a31f8eda4486, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &2373685676654386966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -101,15 +102,34 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.59964025, y: 0.4797122}
+    oldSize: {x: 0.3, y: 0.24}
     newSize: {x: 0.59964025, y: 0.4797122}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59964025, y: 0.4797122}
+  m_Size: {x: 0.3, y: 0.2}
   m_EdgeRadius: 0
+--- !u!95 &613404585348737832
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373685676654386962}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2373685676654386961
 MonoBehaviour:
   m_ObjectHideFlags: 0
