@@ -43,7 +43,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c85265f8742c44dae0d2ed84994318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformPrefab: {fileID: 7762871665933152516, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
-  minDistanceY: 0.5
-  maxDistanceY: 1.5
-  maxDistanceX: 2
+  platformTypes:
+  - {fileID: 7762871665933152516, guid: 482c04b3428d29843a46ae4caa86bdb8, type: 3}
+  - {fileID: 3137865382646868404, guid: b5c572ed3ee433542ace3ab9c459c94a, type: 3}
+  - {fileID: 92726933769637375, guid: 31db43b1d909a0e45ae1800767157113, type: 3}
+  platformProbabilities:
+  - 0.7
+  - 0.1
+  - 0.2
+  PlatformMinDistanceY: 0.5
+  PlateformMaxDistanceY: 1.5
+  PlatformMaxDistanceX: 2
+  number_enemies: 100
+  EnemyMaxDistanceFromMiddle: 2
+  EnemyMinDistanceY: 5
+  EnemyMaxDistanceY: 15
+  enemyPrefabList:
+  - {fileID: 1095842645536656099, guid: e1009858b34313246ada5b314e1b801d, type: 3}
+  - {fileID: 1095842645536656099, guid: 2debaf4af1ce8fa40bf9a8278f646fe1, type: 3}
+  decorationPrefabList:
+  - {fileID: 3620927818848728875, guid: 149244aa5e57abc47ada46d411b0c963, type: 3}
+  - {fileID: 3620927818848728875, guid: a167c60b7dab62c47ad772861184677b, type: 3}
+  - {fileID: 3620927818848728875, guid: b1a137c979fde544bafe1618998894c4, type: 3}
+  - {fileID: 3620927818848728875, guid: 5948e64ab4b37cb459a08c88cff151f2, type: 3}
+  number_decoration: 100
+  DecorationMinDistanceY: 5
+  DecorationMaxDistanceY: 15
+  powerUpPrefabs:
+  - {fileID: 4459297977777651608, guid: f85054b1201704741bea55865ca2e535, type: 3}
+  - {fileID: 2373685676654386962, guid: 41b0fe096f44a734ab4c3e4973baa235, type: 3}
+  powerUpProbabilities:
+  - 0.01
+  - 0.01
