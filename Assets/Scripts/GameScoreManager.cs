@@ -16,6 +16,8 @@ public class GameScoreManager : MonoBehaviour
     float bestHeight = 0;
     [HideInInspector]
     public float score = 0;
+    [HideInInspector]
+    float bonusScore = 0;
 
     void Start()
     {
@@ -31,9 +33,8 @@ public class GameScoreManager : MonoBehaviour
             if (playerController.transform.position.y > bestHeight)
             {
 				// if the player is moving up, update the score
-				score = playerController.transform.position.y * scoreMultiplier;
-				ScoreUIText.text = score.ToString("0");
 				bestHeight = playerController.transform.position.y;
+				updateScore();
 			}
 		}
 	}
@@ -42,5 +43,16 @@ public class GameScoreManager : MonoBehaviour
     {
     	ScoreUI.SetActive(false);
         gameOver = true;
+	}
+
+    public void AddBonus(int bonus)
+	{
+		bonusScore += bonus;
+	}
+
+    public void updateScore(){
+		score = bestHeight * scoreMultiplier + bonusScore;
+		ScoreUIText.text = score.ToString("0");
+		
 	}
 }
