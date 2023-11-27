@@ -29,12 +29,14 @@ public class PlayerController : MonoBehaviour
 	public Animator SpringShoes_animator;
 	private float moveX;
 	private bool canJump = true;
+	private AudioSource jumpSound;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
         speed = gameSettings.playerSpeed;
+		jumpSound = GetComponent<AudioSource>();
 
 		// calculate the screen bounds
 		float halfPlayerWidth = transform.localScale.x / 2f; // half the player width
@@ -154,6 +156,7 @@ public class PlayerController : MonoBehaviour
             {
 				rb.velocity = upVelocity;
 				animator.SetTrigger("jump");
+				jumpSound.Play();
 			}
 			
 		}
